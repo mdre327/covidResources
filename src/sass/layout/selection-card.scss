@@ -1,0 +1,28 @@
+.selection-cards{
+    &__wrapper{
+        display: flex;
+        justify-content:space-between;
+        padding:4rem;
+        margin-top: 3rem;
+        flex-direction:column;
+    }
+    &__row{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        margin: 2rem 0;
+        
+    }
+}
+.iOxygen{
+    background-image: url(../../images/oxygen.jpg);
+}
+.iMed{
+    background-image: url(../../images/medicine.jpg);
+}
+.iBed{
+    background-image: url(../../images/bed.jpg);
+}
+.iPlasma{
+    background-image: url(../../images/banner.jpg);
+}

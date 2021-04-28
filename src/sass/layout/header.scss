@@ -1,0 +1,38 @@
+.Banner{
+    height: 40rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    /* position: relative; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    @include respond (tab-sm){
+        height:42rem;
+        
+    }
+    &__title{
+        font-size: 3rem;
+        border: 2px solid;
+        margin-top: 12rem;
+        padding: 2rem 4rem;
+        color: #edecef;
+            h1{
+                text-shadow:4px 4px 10px #000;
+            }
+    }
+    &__text{
+        color: white;
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-left: 6rem;
+    margin-top: 2rem;
+    span{
+        text-shadow: 3px 3px 2px #020202;
+    }
+    }
+}
