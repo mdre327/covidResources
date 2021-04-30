@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import axios from 'axios';
 function ProvideData() {
 
     const[error,setErr]=useState(false);
+    const [submit, setsubmit] = useState(false);
     const [id,setId] =useState(0)
 const [data, setData] = useState({
     name:"",
@@ -22,13 +23,15 @@ const  { name, time, contact, location,cat, vrAt, msg} =data;
         e.preventDefault();
         console.log("f", data);
         console.log(name)
-        axios.post( 'https://v1.nocodeapi.com/mdre327/google_sheets/RruuEcqslbaeScxT?tabId=Sheet1',[[id.toString(),name.toString(),time.toString(),contact.toString(),location.toString(),cat.toString(),vrAt.toString(),msg.toString(),new Date().toLocaleDateString()]])
+        axios.post( 'https://v1.nocodeapi.com/mdre3277/google_sheets/pkGhDDyKRjyxKLQE?tabId=Sheet1',[[name.toString(),time.toString(),contact.toString(),location.toString(),cat.toString(),vrAt.toString(),msg.toString(),new Date().toLocaleDateString()]])
         .then(response =>{
             console.log(response,"res");
             setData({...data, name:"", time:"", contact:"", location:"", cat:"", msg:"",})
+            setsubmit(true)
         })
         .catch(error =>{
             console.log(error)
+            setErr(true)
         })
 
        
@@ -116,8 +119,8 @@ axios({
                     </div>
                     <div className="submit-details__row">
                         <div className="submit-details__input-sec">
-                            <select name="catagories" id="catagories" className="submit-details__input-field"  name="cat" onChange ={handleChange}>
-                            <option disabled={true} selected>select</option>   
+                            <select name="catagories" id="catagories" className="submit-details__input-field"  onChange ={handleChange}>
+                            <option disabled={true} >select</option>   
                             <option value="oxygen">Oxygen</option>
                                 <option value="bed">Bed</option>
                                 <option value="plasma">Plasma</option>
@@ -138,7 +141,8 @@ axios({
                         <button type="submit" className="submit-details__submit-btn" onClick={handleSubmitBtn}>Submit</button>
                     </div>
                 </form>
-                {error!=true ?<h1>could not be submited try agin later  or call on 7780988972</h1> : <h1>submitted successfully</h1>}
+                {error ?<h1>could not be submited try agin later  or call on 7780988972</h1> : null}
+                {submit ? <h1> submitted successfully</h1> : ""}
             </div>
         </div>
     )

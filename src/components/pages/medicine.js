@@ -2,35 +2,37 @@ import axios from 'axios'
 import React, { useEffect, useState} from 'react'
 
 function OxygenPage() {
-    const [oxygen, setoxygen] = useState([])
-    const [loading , setLoading] = useState(true)
+    const [medicine, setmedicine] = useState([])
+
 useEffect(()=>{
     axios.get('https://v1.nocodeapi.com/mdre3277/google_sheets/pkGhDDyKRjyxKLQE?tabId=Sheet1')
     .then((response) => {
         console.log("1", response.data.data)
         const data= response.data.data
+        
+/*         const obj = JSON.parse(response.data)
+        console.log(obj,"objn",obj.name); */
         console.log(data)
-        setoxygen(data)
-    })
-    .catch((err) => {
-        console.log("errr message",err)
-    })
-    .finally(() => {
-        setLoading(false)
-    })
+        setmedicine(data)
+    });
     
 },[]);
-const filteredVisited= oxygen.filter((i)=>i.visited==="TRUE");
+const filteredVisited= medicine.filter((i)=>i.visited==="TRUE");
 console.log("fi", filteredVisited)
-   const oxygenFilter  = filteredVisited.filter((i)=>i.catagories==="oxygen")
-   console.log("ox",oxygenFilter)
+   const medicineFilter  = filteredVisited.filter((i)=>i.catagories==="medicine")
+console.log("ox",medicineFilter)
 
     return (
         <div className="oxygen">
-        {loading && <h1>loading.....</h1>}
-            {oxygenFilter.length>0 ? 
+        <div className="header">
+            <div className="header__detail">
+                <span className="header__title">Medicine</span>
+            </div>
+        </div>
+            
+            {medicineFilter.length>0 ? 
                 <>
-                {oxygenFilter.map((item)=>
+                {medicineFilter.map((item)=>
                     <div  key={item.row_id} className="data-card__card">
                     <div className="data-card__header">
                     <h1>{item.catagories}</h1>

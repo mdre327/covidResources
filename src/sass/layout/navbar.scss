@@ -1,0 +1,20 @@
+.navbar{
+    width: 100%;
+    height: 5rem;
+    ul{
+        display: flex;
+        justify-content:center;
+    }
+    li{
+        list-style-type: none;
+    margin: 1rem;
+    border: 1px solid black;
+    padding: 0.6rem 4rem;
+    background: #4a69a2;
+    color: white;
+    transition:ease-in-out 0.5s;
+    &:hover{
+        background-color:#3e79e7
+    }
+    }
+}

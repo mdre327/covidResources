@@ -1,0 +1,44 @@
+.oxygen{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.data-card{
+    &__card{
+        border: 1px solid;
+        width: 34rem;
+        padding: 1rem;
+        margin:1rem;
+        background: #e6c9c9;
+    }
+    &__header{
+        border-bottom: 1px solid #a05252;
+    margin-bottom: 1rem;
+    color: #f9f9f9;
+    text-align: center;
+    background: #5252ec;
+    box-shadow: 1px 1px 4px black;
+}
+    &__body{
+        padding: 1rem;
+    background: white;
+    border: 1px solid;
+    box-shadow: 1px 1px 13px #18191b;
+    }
+    &__text{
+        padding: 1rem;
+        background: white;
+        border: 1px solid;
+        margin-bottom: 0.5rem;
+        box-shadow: 1px 1px 13px #18191b;
+    }
+    &__desc{
+        display: flex;
+        font-size: 1.5rem;
+    }
+    &__message-box{
+        border: 1px solid #ca5555;
+        border-radius: 4px;
+        padding: 1rem;
+    }
+}
