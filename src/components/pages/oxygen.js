@@ -38,7 +38,6 @@ console.log("fi", filteredVisited)
                     <div className="data-card__body">
                     <div className="data-card__detail">
                         <div className="data-card__text"><span className="data-card__desc">Name : <h4>{item.Name}</h4></span></div>
-                        <div className="data-card__text"><span className="data-card__desc"> time of availibility :<h4> {item.time}</h4></span></div>
                         <div className="data-card__text"><span className="data-card__desc">location : <h4>{item.location}</h4></span></div>
                         <div className="data-card__text"><span className="data-card__desc">contact:<h4> {item.contact}</h4></span></div>
                          <div className="data-card__text"><span className="data-card__desc">date of submission: <h4>{item.dos}</h4></span></div>

@@ -10,7 +10,7 @@ function ProvideData() {
         time: "",
         contact: "",
         location: "",
-        cat: "",
+        cat: "Oxygen",
         vrAt: "",
         msg: "",
     });
@@ -23,7 +23,7 @@ function ProvideData() {
         e.preventDefault();
         console.log("f", data);
         console.log(name)
-        axios.post('https://v1.nocodeapi.com/mdre3277/google_sheets/pkGhDDyKRjyxKLQE?tabId=Sheet1', [[name.toString(),  contact.toString(), location.toString(), cat.toString(),  msg.toString(), new Date().toLocaleDateString(), "TRUE"]])
+        axios.post('https://v1.nocodeapi.com/mdre3277/google_sheets/pkGhDDyKRjyxKLQE?tabId=Sheet1', [[name.toString(),  contact.toString(), location.toString(), cat.toString(),  msg.toString(), new Date().toLocaleDateString(), "FALSE"]])
             .then(response => {
                 console.log(response, "res");
                 setData({ ...data, name: "",  contact: "", location: "", cat: "", msg: "", })
@@ -110,7 +110,7 @@ function ProvideData() {
                         <div className="submit-details__input-sec">
                         <span className="submit-details__label">Catagories</span>
                             <select name="catagories" id="catagories" className="submit-details__input-field" onChange={handleChange} >
-                                <option disabled={true} value={""} >select</option>
+                                <option disabled={true} defaultValue="select" >select</option>
                                 <option value="oxygen">Oxygen</option>
                                 <option value="bed">Bed</option>
                                 <option value="plasma">Plasma</option>

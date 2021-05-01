@@ -7,6 +7,9 @@ import OxygenPage from "./components/pages/oxygen"
 import PlasmaPage from "./components/pages/plasma";
 import MedicinePage from "./components/pages/medicine";
 import Navbar from './components/layout/navbar';
+import Footer from './components/layout/footer';
+import About from './components/pages/about';
+
 function App() {
   return (
     <div className="App">
@@ -19,8 +22,11 @@ function App() {
     <Route path="/bed-detail" component={BedPage}/>
     <Route path="/plasma-detail" component={PlasmaPage}/>
     <Route path="/medicine-detail" component={MedicinePage}/>
+    <Route path="/about">
+    <About/>
+    </Route>
     </Switch>
-
+<Footer/>
     </div>
   );
 }

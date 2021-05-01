@@ -1,0 +1,74 @@
+/*---footer section--------*/
+.cly-footer {
+  background-color: #071b4d;
+
+  &__top-row {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    flex-wrap: wrap;
+  }
+
+  &__footer-col {
+    width:33%;
+    @include respond(phone-sm){
+      font-size: 1.4rem;
+  }
+  }
+
+  &-iconbox {
+    margin-top: 2rem;
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: $color-grey-light-4;
+
+    &:hover {
+      color: $color-cly-white;
+    }
+  }
+
+  &__para {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 0.3rem;
+    color: $color-grey-light-4;
+  }
+
+  &__icon-box {
+    margin-top: 2rem;
+    & a {
+      color: $color-grey-light-4 !important;
+      &:hover {
+        color: $color-cly-white !important;
+      }
+    }
+  }
+
+  &__para {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 0.3rem;
+    color: $color-grey-light-4;
+  }
+
+  &__icon-box {
+    margin-top: 2rem;
+    & a {
+      color: $color-grey-light-4 !important;
+      &:hover {
+        color: $color-cly-white !important;
+      }
+    }
+  }
+  &__bottom-row {
+    text-align: center;
+    border-top: 1px solid $color-cly-blue;
+    padding: 4rem 0;
+  }
+}
