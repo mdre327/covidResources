@@ -1,17 +1,30 @@
 .submit-details{
-    background-image: url(../../images/fbg.jpg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-    background-attachment: fixed;
-    background-position: center;
+   display: flex;
+   background-color: #6889ff;
     padding: 4rem;
+    @include respond(tab-sm){
+        flex-direction: column;
+    }
     &__title{
         margin:2rem 0;
+        width: 45%;
+        padding: 1rem;
+        @include respond(tab-sm){
+            width: 85%;
+        }
+    }
+    &__form{
+        width:50%;
+        border-left: 1px solid white;
+        @include respond(tab-sm){
+            width: 93%;
+            margin:0 auto;
+        }
     }
     &__heading{
         font-size:6rem;
         font-weight: 600;
-        color: #255da2;
+        color: #b53838;
         text-shadow: 1px 1px 3px black;
         
     }
@@ -33,10 +46,14 @@
     &__input-sec{
         width: 49%;
         margin:1rem 0;
-        box-shadow: 2px 3px 9px rgb(124, 124, 124);
+        
         @include respond(tab-sm){
             width: 100%;
         }
+    }
+    &__label{
+        font-size: 1.8rem;
+        color: #3f4645;
     }
     &__input-field{
         width: 100%;
@@ -72,4 +89,10 @@
 #textAreaForm{
     margin-top: 2rem;
     height: 15rem;
+}
+.toast{
+    border: 1px solid black;
+    padding: 6px;
+    background: #65adb9;
+    color: white;
 }

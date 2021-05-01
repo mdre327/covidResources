@@ -14,14 +14,19 @@ function SelectionCards() {
     // }
     return (
         <div className="selection-cards">
+        <div className="selection-cards__header">
+            <h1> J & K  Covid-Resources </h1>
+            <span className="selection-cards__heading"> Select One of The card to Find The Availibility Of Your Desired Resource </span>
+        </div>
             <div className="selection-cards__wrapper">
-            <div className="selection-cards__row">
+         
             <Link to={"/bed-detail"}>
             <Card
             cardCname={"selection-cards__card iBed"}
             textCname="selection-cards__title"
             roles="button"
             title="Beds"
+            icon="fas fa-procedures"
             />
             </Link>
             <Link to={"/oxygen-detail"}>
@@ -30,16 +35,18 @@ function SelectionCards() {
             textCname="selection-cards__title"
             roles="button"
             title="Oxygen"
+            icon="fas fa-tree"
             />
             </Link>
-            </div>
-            <div className="selection-cards__row">
+  
+    
             <Link to={"/medicine-detail"}>
             <Card
             cardCname="selection-cards__card iMed"
             textCname="selection-cards__title"
             roles="button"
             title="Medicine"
+            icon="fas fa-pills"
             />
             </Link>
             <Link to={"/plasma-detail"}>
@@ -49,9 +56,10 @@ function SelectionCards() {
             textCname="selection-cards__title"
             roles="button"
             title="Plasma"
+            icon="fas fa-tint"
             />
             </Link>
-            </div>
+          
             </div>
         </div>
     )

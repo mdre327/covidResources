@@ -1,7 +1,6 @@
 .Banner{
     height: 40rem;
     width: 100%;
-    margin-bottom: 2rem;
     overflow: hidden;
     /* position: relative; */
     background-attachment: fixed;
@@ -17,10 +16,10 @@
     }
     &__title{
         font-size: 3rem;
-        border: 2px solid;
+        border: 4px solid #898cfb;
         margin-top: 12rem;
         padding: 2rem 4rem;
-        color: #edecef;
+        color: #fefeff;
             h1{
                 text-shadow:4px 4px 10px #000;
             }

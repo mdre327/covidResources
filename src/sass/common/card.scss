@@ -1,19 +1,30 @@
 .selection-cards__card{
-opacity: 0.87;
-    height:30rem;
-    width: 88%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border: 2px solid #fff;
+    width: 91%;
+    border: 2px solid #689fe6;
     box-shadow: 5px 7px 17px -3px #232323;
     cursor: pointer;
+    height: 20rem;
+    @include respond(phone-lg){
+        margin-bottom:4.5rem;
+    }
+ 
 }
 .selection-cards__title{
-    margin-top: 18rem;
-    margin-left: 2rem;
-    font-size: 4.2rem;
+
+    font-size: 2.6rem;
     font-weight: 900;
-    color: #fff;
+    color: #443f3f;
     padding: 1rem;
+    width: 83%;
+    margin: 2rem 0 0 0;
     border-bottom: 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 3rem;
+    i{
+        font-size: 10rem;
+        margin-bottom: 1rem;
+        color:#de0000;
+        margin: 0 auto;
+    }
 }
