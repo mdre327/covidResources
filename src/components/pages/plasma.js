@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react'
 
 function PlasmaPage() {
     const [plasma, setplasma] = useState([])
-
+    const [loading , setLoading] = useState(true)
 useEffect(()=>{
     axios.get('https://v1.nocodeapi.com/mdre3277/google_sheets/pkGhDDyKRjyxKLQE?tabId=Sheet1')
     .then((response) => {
@@ -14,6 +14,9 @@ useEffect(()=>{
         console.log(obj,"objn",obj.name); */
         console.log(data)
         setplasma(data)
+    })
+    .finally(() => {
+        setLoading(false);
     });
     
 },[]);
@@ -24,7 +27,7 @@ console.log("fi", filteredVisited)
 
     return (
         <div className="oxygen">
-            
+        {loading && <h1>loading.....</h1>}
             {plasmaFilter.length>0 ? 
                 <>
                 {plasmaFilter.map((item)=>

@@ -3,6 +3,7 @@ import React, { useEffect, useState} from 'react'
 
 function BedPage() {
     const [bed ,setbed] = useState([])
+    const [loading , setLoading] = useState(true)
 
 useEffect(()=>{
     axios.get('https://v1.nocodeapi.com/mdre3277/google_sheets/pkGhDDyKRjyxKLQE?tabId=Sheet1')
@@ -14,6 +15,9 @@ useEffect(()=>{
         console.log(obj,"objn",obj.name); */
         console.log(data)
         setbed(data)
+    })
+    .finally(() => {
+        setLoading(false);
     });
     
 },[]);
@@ -24,7 +28,7 @@ console.log("fi", filteredVisited)
 
     return (
         <div className="oxygen">
-            
+        {loading && <h1>loading.....</h1>}
             {bedFilter.length>0 ? 
                 <>
                 {bedFilter.map((item)=>

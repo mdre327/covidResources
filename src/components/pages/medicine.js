@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react'
 
 function OxygenPage() {
     const [medicine, setmedicine] = useState([])
-
+    const [loading , setLoading] = useState(true)
 useEffect(()=>{
     axios.get('https://v1.nocodeapi.com/mdre3277/google_sheets/pkGhDDyKRjyxKLQE?tabId=Sheet1')
     .then((response) => {
@@ -14,6 +14,9 @@ useEffect(()=>{
         console.log(obj,"objn",obj.name); */
         console.log(data)
         setmedicine(data)
+    })
+    .finally(() => {
+        setLoading(false);
     });
     
 },[]);
@@ -26,10 +29,10 @@ console.log("ox",medicineFilter)
         <div className="oxygen">
         <div className="header">
             <div className="header__detail">
-                <span className="header__title">Medicine</span>
+                <span className="header__title"></span>
             </div>
         </div>
-            
+        {loading && <h1>loading.....</h1>}
             {medicineFilter.length>0 ? 
                 <>
                 {medicineFilter.map((item)=>
